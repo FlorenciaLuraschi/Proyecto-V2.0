@@ -24,7 +24,7 @@
                         <div class="comentario_principal">
                             <!-- Avatar -->
                             <div class="comentario_avatar">
-                                <img src="{{ Storage::url(auth()->user()->avatar) }}" alt="">
+                                <img src="{{ Storage::url(auth()->user()->avatar) }}" alt=""> 
                             </div>
                             <!-- Contenedor del Comentario -->
                             <div class="caja_comentario">

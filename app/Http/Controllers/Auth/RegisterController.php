@@ -68,7 +68,7 @@ class RegisterController extends Controller
     {
       $nombreArchivo = '';
       if(request()->has('avatar')) {
-        $nombreArchivo = request('avatar')->storePublicly('avatars');
+        $nombreArchivo = request('avatar')->storePublicly('public/avatars');
       }
         return User::create([
             'name' => $data['name'],
@@ -84,7 +84,7 @@ class RegisterController extends Controller
      * Para usar en el select del registro
      */
 
-    public function register(){
+    public function index(){
       $paises=Country::all();
       return view('auth.register')->with('paises', $paises);
     }
