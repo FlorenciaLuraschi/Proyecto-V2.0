@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+/*Comienzo de estilo para ayuda*/
+.contenedor_ayuda{
+  max-width: 990px;
+  margin: 0 auto;
+  background-color:#364D3F;
+  padding: 20px;
+}
+.contenedor_ayuda h1 {
+  font-size: 40px;
+  font-family: 'Special Elite', cursive;
+  color: #ffecb3;
+  text-align: center;
+}
+.section1_ayuda li {
+  font-family: 'Special Elite', cursive;
+  color: white;
+}
+.section1_ayuda h3 {
+  font-family: 'Special Elite', cursive;
+  color: #d6c697;
+}
+.section1_ayuda a {
+  text-decoration: none;
+}
+/*.section1_ayuda a h3:hover{
+  border-bottom: 1px solid #ff9301;
+  display: inline;
+}*/
+.listade_adyuda h2, .consulta-ayuda h2{
+  font-weight: 400;
+  font-family: 'Special Elite', cursive;
+  color: #ffecb3;
+}
+.listade_adyuda p{
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+  color: white;
+}
+.consulta-ayuda{
+  margin: 0 50px;
+}
+.textarea_ayuda{
+  margin-bottom: 20px;
+}
+.textarea_ayuda:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, 0.25);
+}
+.respuesta-boton{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8bd6a1;
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+  font-size: 12;
+}

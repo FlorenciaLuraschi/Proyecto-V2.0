@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+/*Comienzo de estilo de la barra de navegación*/
+.navbarra{
+  padding: 0;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+nav h2{
+  color: #ffecb3;
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
+  margin-top:8px;
+}

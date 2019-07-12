@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+/*estilo de juegos*/
+.body_juegos{
+  background-image: url(../img/fondo-juegos.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contenedor_juegos{
+  max-width: 800px;
+  margin: 0 auto;
+}
+.card{
+  border: none;
+  background-color:#364D3F;
+}
+.card-body{
+  padding: 0;
+}
+.body_juegos .card .card-body a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.bottonjuego{
+  position:relative;
+  top:-20px;
+  left: 45px;
+  z-index: 20;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #8bd6a1;
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+  font-size: 28px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  width: 75%;
+}
+.bottonjuego:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+}
+.body_juegos .card .card-body .card-text{
+  display: block;
+  text-align: center;
+  color: #ffecb3;
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+  font-size: 16px;
+  background-color:#364D3F;
+  margin-bottom: 10px;
+}
