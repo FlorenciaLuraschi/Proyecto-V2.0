@@ -89,10 +89,10 @@
                             <option hidden value="">Seleccione su país</option>
                             @foreach ($paises as $pais)
                               <option value="{{$pais->id}}"
-                              @if ($pais==old('country_id',$model->option))
+                            @if ($pais==old('country_id', $model->option))
                               selected='selected'
                             @endif
-                            >{{$pais->name}}</option>
+                            {{$pais->name}}</option>
                             @endforeach
                             @error('country_id')
                                 <span class="invalid-feedback" role="alert">

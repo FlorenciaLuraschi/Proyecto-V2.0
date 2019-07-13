@@ -26,7 +26,15 @@ Route::get('/posts/new', 'PostsController@create');
 Route::delete('/posts/{post}', 'PostsController@destroy');
 // Route::get('/posts/{post}/edit', 'PostsController@edit');
 // Route::patch('/posts/{post}', 'PostsController@update');
-
+Route::get('/ayuda', function () {
+    return view('ayuda');
+});
+Route::get('/juego', function () {
+    return view('juego');
+});
+Route::get('/inicio', function () {
+    return view('inicio');
+});
 
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf
