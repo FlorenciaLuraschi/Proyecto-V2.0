@@ -61,9 +61,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //return view('post.edit',['post'=>$post]);
+        // return view('post.edit',['post'=>$post]);
     }
 
     /**
@@ -73,9 +73,14 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+      // $post->update([
+      // 'description'=>$request->get('description'),
+      // 'user_id' => 1
+      // ]);
+      //
+      //  return redirect("/posts");
     }
 
     /**

@@ -32,9 +32,9 @@ Route::get('/ayuda', function () {
 Route::get('/juego', function () {
     return view('juego');
 });
-Route::get('/inicio', function () {
-    return view('inicio');
-});
+// Route::get('/inicio', function () {
+//     return view('inicio');
+// });
 
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf

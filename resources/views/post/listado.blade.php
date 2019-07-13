@@ -23,6 +23,11 @@
                           {{method_field('DELETE')}}
                           <button>Borrar</button>
                         </form>
+                        <form class="" action="{{url('/posts',$post->id)}}" method="post">
+                          @csrf
+                          {{method_field('PATCH')}}
+                          <button>Editar</button>
+                        </form>
                     </div>
                     <div class="contenido_comentario">
                         {{$post->description}}

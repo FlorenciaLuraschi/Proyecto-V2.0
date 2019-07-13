@@ -92,7 +92,7 @@
                             <a class="nav-link" href="/juego">Jugar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/inicio">Sala</a>
+                            <a class="nav-link" href="/posts">Sala</a>
                         </li>
 
                         @endguest
