@@ -35,6 +35,12 @@ Route::get('/juego', function () {
 // Route::get('/inicio', function () {
 //     return view('inicio');
 // });
+Route::get('/listadoUsuario', 'AdminController@index');
+Route::get('/showUsuario/{user}', 'AdminController@show');
+Route::get('/editUsuario/{user}', 'AdminController@edit');
+Route::patch('/editUsuario/{user}', 'AdminController@update');
+Route::get('/borrarUsuario/{user}', 'AdminController@destroy'); //CHEQUEAR: POR METODO DELETE NO FUNCIONA/ HACE FALTA CREAR UNA VISTA BORRAR?
+
 
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf
