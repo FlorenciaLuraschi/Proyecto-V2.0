@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-      $posts=Post::latest()->get();
+      $posts=Post::with('author')->latest()->get();
 
       return view("post.listado")->with('posts',$posts);
     }
@@ -39,7 +40,7 @@ class PostsController extends Controller
     {
       Post::create([
         'description'=>$request->get('description'),
-        'user_id' => 1
+        'user_id' => $request->get('user_id')
       ]);
       return redirect("/posts");
     }
@@ -50,9 +51,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+      // User::where('id',$post->user_id)->get
+      $user_autor = User::find($user_id);
+      return view('post.listado')->with('user_autor',$user_autor);
     }
 
     /**
@@ -63,7 +66,7 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        // return view('post.edit',['post'=>$post]);
+        return view('post.listado',['post'=>$post]);
     }
 
     /**
@@ -75,12 +78,12 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-      // $post->update([
-      // 'description'=>$request->get('description'),
-      // 'user_id' => 1
-      // ]);
-      //
-      //  return redirect("/posts");
+      $post->update([
+      'description'=>$request->get('description'),
+      'user_id' => $request->get('user_id')
+      ]);
+
+       return redirect("/posts");
     }
 
     /**

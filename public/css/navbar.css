@@ -9,7 +9,8 @@
 }
 nav h2{
   color: #ffecb3;
-font-family: 'Lobster', cursive;
+  font-family: "Sofia", cursive;
+  font-weight: bold;
   font-size: 32px;
   margin-top:8px;
 }

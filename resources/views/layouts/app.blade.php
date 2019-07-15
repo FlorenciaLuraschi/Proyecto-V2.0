@@ -35,7 +35,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm">
             <div class="container">
               <img class="logo" src="{{ asset('img/logo1.png') }}" alt="logo_proyecto">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -74,7 +74,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" target="_blank" href="">Perfil</a>
+                              <a class="dropdown-item" target="_blank" href="/perfil">Perfil</a>
                               <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="" download>Editar Perfil</a>
                               <div class="dropdown-divider"></div>
@@ -104,7 +104,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>

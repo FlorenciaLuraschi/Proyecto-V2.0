@@ -24,17 +24,18 @@ Route::get('/posts', 'PostsController@index');
 Route::post('/posts', 'PostsController@store');
 Route::get('/posts/new', 'PostsController@create');
 Route::delete('/posts/{post}', 'PostsController@destroy');
-// Route::get('/posts/{post}/edit', 'PostsController@edit');
-// Route::patch('/posts/{post}', 'PostsController@update');
+Route::get('/posts/{user_id}', 'PostsController@show');
+Route::get('/posts/{post}/edit', 'PostsController@edit');
+Route::patch('/posts/{post}', 'PostsController@update');
 Route::get('/ayuda', function () {
     return view('ayuda');
 });
 Route::get('/juego', function () {
     return view('juego');
 });
-// Route::get('/inicio', function () {
-//     return view('inicio');
-// });
+Route::get('/perfil', function () {
+    return view('perfil');
+});
 
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf

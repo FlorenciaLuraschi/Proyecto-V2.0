@@ -9,24 +9,22 @@
             <div class="comentario_principal">
                 <!-- Avatar -->
                 <div class="comentario_avatar">
-                    <img src="{{ Storage::url(auth()->user()->avatar) }}" />
+                    <img src="{{ Storage::url($post->author->avatar) }}" />
                 </div>
                 <!-- Contenedor del Comentario -->
                 <div class="caja_comentario">
                     <div class="encabezado_comentario">
-                        <h5 class="nombre_comentario"><a href="#">{{ Auth::user()->name }}</a></h5>
+                        <h5 class="nombre_comentario"><a href="#">{{$post->author->name}}</a></h5>
                         <span>hace 20 minutos</span>
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-reply"></i>
-                        <form class="" action="{{url('/posts',$post->id)}}" method="post">
+                        <form class="button-delete" action="{{url('/posts',$post->id)}}" method="post">
                           @csrf
                           {{method_field('DELETE')}}
-                          <button>Borrar</button>
+                          <button><i class="fas fa-trash-alt"></i></button>
                         </form>
-                        <form class="" action="{{url('/posts',$post->id)}}" method="post">
-                          @csrf
-                          {{method_field('PATCH')}}
-                          <button>Editar</button>
+                        <form class="button-edit" action="{{url('/posts',$post->id)}}" method="post">
+                          <button><i class="fas fa-edit"></i></button>
                         </form>
                     </div>
                     <div class="contenido_comentario">
@@ -34,6 +32,16 @@
                     </div>
                 </div>
             </div>
+
+            <form action="{{url('/posts',$post->id)}}" method="POST">
+              @csrf
+              {{method_field('PATCH')}}
+              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                <div class="form-group">
+                    <textarea class="form-control estilotextarea" name="description" id="description" rows="3" cols="60">{{old('description', $post ->description)}}</textarea>
+                </div>
+                <button class="bottoncomentario" type="submit">Enviar</button>
+            </form>
             {{-- <!-- Respuestas de los comentarios -->
             <ul class="lista_comentarios lista_repuesta">
                 <li>

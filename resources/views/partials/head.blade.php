@@ -11,6 +11,7 @@
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Merienda:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">

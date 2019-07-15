@@ -58,7 +58,9 @@ html, body {
 .title {
     font-size: 84px;
     /* font-family: 'Special Elite', cursive; */
-    font-family: 'Lobster', cursive;
+    /* font-family: 'Lobster', cursive; */
+    font-family: "Sofia", cursive;
+    font-weight: bold;
     color: #ffecb3;
 }
 

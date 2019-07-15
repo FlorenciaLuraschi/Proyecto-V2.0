@@ -10,6 +10,7 @@
         <article class="chatgeneral col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
             <form action="/posts" method="POST">
               @csrf
+              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <div class="form-group">
                     <textarea class="form-control estilotextarea" name="description" id="description" rows="3" cols="60" placeholder="Agrega un comentario..."></textarea>
                 </div>
@@ -24,7 +25,7 @@
                         <div class="comentario_principal">
                             <!-- Avatar -->
                             <div class="comentario_avatar">
-                                <img src="{{ Storage::url(auth()->user()->avatar) }}" alt=""> 
+                                <img src="{{ Storage::url(auth()->user()->avatar) }}" alt="">
                             </div>
                             <!-- Contenedor del Comentario -->
                             <div class="caja_comentario">
