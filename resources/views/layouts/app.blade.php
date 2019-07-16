@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('partials.head')
-   <title>@yield("title")</title>
+    <title>@yield("title")</title>
 
     {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
 
@@ -29,15 +29,15 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
-<link rel="stylesheet" href="css/master28042019.css"> --}}
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/master28042019.css"> --}}
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm">
             <div class="container">
-              <img class="logo" src="{{ asset('img/logo1.png') }}" alt="logo_proyecto">
+                <img class="logo" src="{{ asset('img/logo1.png') }}" alt="logo_proyecto">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <h2>FloPaTin</h2>
                 </a>
@@ -64,20 +64,20 @@
                         </li>
                         @endif
                         @else
-                          <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-              </form>
+                        <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}">
+                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" value="">
+                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" target="_blank" href="/perfil">Perfil</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="" download>Editar Perfil</a>
-                              <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" target="_blank" href="/perfil">Perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="" download>Editar Perfil</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Cerrar Sesión') }}

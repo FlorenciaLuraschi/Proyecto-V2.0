@@ -53,9 +53,7 @@ class PostsController extends Controller
      */
     public function show($user_id)
     {
-      // User::where('id',$post->user_id)->get
-      $user_autor = User::find($user_id);
-      return view('post.listado')->with('user_autor',$user_autor);
+      //
     }
 
     /**

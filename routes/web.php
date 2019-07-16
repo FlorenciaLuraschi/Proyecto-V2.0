@@ -24,7 +24,6 @@ Route::get('/posts', 'PostsController@index');
 Route::post('/posts', 'PostsController@store');
 Route::get('/posts/new', 'PostsController@create');
 Route::delete('/posts/{post}', 'PostsController@destroy');
-Route::get('/posts/{user_id}', 'PostsController@show');
 Route::get('/posts/{post}/edit', 'PostsController@edit');
 Route::patch('/posts/{post}', 'PostsController@update');
 Route::get('/ayuda', function () {
@@ -36,7 +35,8 @@ Route::get('/juego', function () {
 Route::get('/perfil', function () {
     return view('perfil');
 });
-
+Route::get('/search', 'BuscadorController@buscar');
+// Route::get('/resultados', 'BuscadorController@resultados');
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf
 //   {{method_field('PATCH')}}
