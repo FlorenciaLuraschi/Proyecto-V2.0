@@ -74,9 +74,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" target="_blank" href="/perfil">Perfil</a>
+                                <a class="dropdown-item" href="/perfil">Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" download>Editar Perfil</a>
+                                <a class="dropdown-item" href="{{url('/editPerfil', Auth::user()->id)}}">Editar Perfil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

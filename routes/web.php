@@ -36,6 +36,8 @@ Route::get('/perfil', function () {
     return view('perfil');
 });
 Route::get('/search', 'BuscadorController@buscar');
+Route::get('/editPerfil/{user}', 'PerfilController@edit');
+Route::patch('/editPerfil/{user}', 'PerfilController@update');
 // Route::get('/resultados', 'BuscadorController@resultados');
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf
