@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use App\User;
 use App\Game;
+use App\User;
 
-class PostsController extends Controller
+class GamesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-      $posts=Post::with('author')->latest()->get();
-      
-      return view("post.listado")->with('posts',$posts);
+      $games=Game::query()->with('player')->orderByDesc('score')->take(20)->get();
+
+      return view("games.posiciones")->with('games',$games);
     }
 
     /**
@@ -28,7 +27,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view("post.create");
+        //
     }
 
     /**
@@ -39,11 +38,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-      Post::create([
-        'description'=>$request->get('description'),
-        'user_id' => $request->get('user_id')
-      ]);
-      return redirect("/posts");
+        //
     }
 
     /**
@@ -52,9 +47,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($user_id)
+    public function show($id)
     {
-      //
+        //
     }
 
     /**
@@ -63,9 +58,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        return view('post.listado',['post'=>$post]);
+        //
     }
 
     /**
@@ -75,14 +70,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-      $post->update([
-      'description'=>$request->get('description'),
-      'user_id' => $request->get('user_id')
-      ]);
-
-       return redirect("/posts");
+        //
     }
 
     /**
@@ -91,16 +81,8 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-      $post->delete();
-      return redirect('/posts');
-    }
-
-    public function posiciones()
-    {
-      $games=Game::query()->with('player')->orderByDesc('score')->take(20)->get();
-
-      return view("post.create")->with('games',$games);
+        //
     }
 }

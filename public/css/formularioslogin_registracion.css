@@ -1,8 +1,8 @@
 /*estilos del formulario login y de registración*/
 .body_login{
-  background-image: url(../img/fondo_principal.jpeg);
+  /* background-image: url(../img/fondo_principal.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 .body_registro{
   background-image: url(../img/card-registro.jpg);

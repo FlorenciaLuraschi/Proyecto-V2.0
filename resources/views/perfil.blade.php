@@ -12,7 +12,9 @@
                               <h5 class="card-title">Miembro desde</h5>
                               <p class="card-text dato_usuario">fecharegistro</p>
                               <h5 class="card-title">País</h5>
-                              <p class="card-text dato_usuario">pais</p>
+                              <?php $bandera=Auth::user()->country_id;?>
+                              <img src="{{ asset('img/'.$bandera.'.png') }}" class="bandera" alt="bandera">
+                              {{-- <p class="card-text dato_usuario"></p> --}}
                               <h5 class="card-title">Puntos totales actuales</h5>
                               <p class="card-text puntos_actuales">25000</p>
                           </div>

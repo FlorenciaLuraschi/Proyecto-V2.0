@@ -65,7 +65,7 @@
                         @endif
                         @else
                         <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}">
-                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" value="">
+                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar personas ..." value="">
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                         <li class="nav-item dropdown">
@@ -74,7 +74,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" target="_blank" href="/perfil">Perfil</a>
+                                <a class="dropdown-item" href="/perfil">Perfil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" download>Editar Perfil</a>
                                 <div class="dropdown-divider"></div>

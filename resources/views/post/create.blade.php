@@ -1,11 +1,31 @@
 @extends('layouts.app')
 @section('title', 'Proyecto FloPaTin-Inicio')
 @section('content')
-
+<div class="header-overlay"></div>
 <section class="secciongral">
     <div class="row contenedorprincipal p-0">
         <article class="tablaposiciones col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-            <p class="ayudas">A modo de ayuda para la visualización del sitio. En esta sección va el listado de los mejores 20 en el juego</p>
+          {{-- @yield("flopationes")   --}}
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">FloPaTiones</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                @foreach ($games as $game)
+
+                <td>
+                  {{ $game->score }}
+                  {{ $game->player->name }}
+                </td>
+                @endforeach
+              </tr>
+
+            </tbody>
+          </table>
         </article>
         <article class="chatgeneral col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
             <form action="/posts" method="POST">

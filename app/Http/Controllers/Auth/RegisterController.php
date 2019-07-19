@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'avatar' => ['required','mimes:jpeg,jpg,png'],
             'country_id' => ['required'],
+            
         ]);
     }
 
@@ -76,6 +77,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'avatar'=>$nombreArchivo,
             'country_id' =>$data['country_id'],
+
         ]);
     }
 
