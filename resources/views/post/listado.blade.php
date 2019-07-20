@@ -18,12 +18,12 @@
                         <span>hace 20 minutos</span>
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-reply"></i>
-                        <form class="button-delete" action="{{url('/posts',$post->id)}}" method="post">
+                        <form class="button-delete" action="{{url('/posts',$post->id)}}" method="POST">
                           @csrf
                           {{method_field('DELETE')}}
                           <button><i class="fas fa-trash-alt"></i></button>
                         </form>
-                        <form class="button-edit" action="{{url('/posts',$post->id)}}" method="post">
+                        <form class="button-edit" action="{{url('/posts',$post->id)}}" method="POST">
                           <button><i class="fas fa-edit"></i></button>
                         </form>
                     </div>

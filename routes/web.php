@@ -32,12 +32,21 @@ Route::get('/ayuda', function () {
 Route::get('/juego', function () {
     return view('juego');
 });
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+// Route::get('/perfil', function () {
+//     return view('perfil');
+// });
+
 Route::get('/search', 'BuscadorController@buscar');
 Route::get('/editPerfil/{user}', 'PerfilController@edit');
 Route::patch('/editPerfil/{user}', 'PerfilController@update');
+
+Route::get('/perfil', 'PublicationController@index');
+Route::get('/perfil/new', 'PublicationController@create');
+Route::post('/perfil', 'PublicationController@store');
+Route::get('/perfil/{publication}/edit', 'PublicationController@edit');
+Route::patch('/perfil/{publication}', 'PublicationController@update');
+Route::delete('/perfil/{publication}', 'PublicationController@destroy');
+
 // Route::get('/resultados', 'BuscadorController@resultados');
 // <form  action="/posts/{{$post->id}}" method="POST">
 //   @csrf

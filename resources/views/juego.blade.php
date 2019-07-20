@@ -2,34 +2,33 @@
 
 @section('titulo', 'Proyecto FloPaTin-Juegos')
 
-@section('page-class', 'body_juegos')
-
 @section('content')
 
-  <div class="container p-0">
-    <div class="card-deck contenedor_juegos">
-      <div class="card">
-        <img src="img/desafio-1.jpg" class="card-img-top" alt="desafio">
-        <div class="card-body">
-          <a href="#">
-            <button class="btn-block bottonjuego" type="submit">
-              Desafio
-            </button>
-          </a>
-          <p class="card-text">Desafia a otros para jugar.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/entrenamiento-1.jpg" class="card-img-top" alt="entrenamiento">
-        <div class="card-body">
-          <a href="#">
-            <button class="btn-block bottonjuego" type="submit">
-              Entrenamiento
-            </button>
-          </a>
-          <p class="card-text">Practica sin sumar puntos.</p>
-        </div>
-      </div>
+<div class="game">
+  <div class="grid">
+    <h1>Preguntas</h1>
+    <hr style="margin-top:20px">
+    <div class="questionContainer">
+      <p id="question">Aqui van las preguntas</p>
     </div>
+    <div class="buttons" id="answer-buttons">
+      <button id="btn0" class="button"><span id="choice0">Answer 1</span>  </button>
+      <button id="btn1" class="button"><span id="choice1">Answer 2</span>  </button>
+      <button id="btn2" class="button"><span id="choice2">Answer 3</span>  </button>
+      <button id="btn3" class="button"><span id="choice3">Answer 4</span>  </button>
+    </div>
+    <hr style="margin-top:50px">
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+
+    </div>
+    <div>
+    <p id="progress">Question x of y.</p></div>
   </div>
+</div>
+
+
+
+
 @endsection
