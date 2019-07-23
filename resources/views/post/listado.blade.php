@@ -14,7 +14,7 @@
                 <!-- Contenedor del Comentario -->
                 <div class="caja_comentario">
                     <div class="encabezado_comentario">
-                        <h5 class="nombre_comentario"><a href="#">{{$post->author->name}}</a></h5>
+                        <h5 class="nombre_comentario"><a href="{{url('/perfil', Auth::user()->id)}}">{{$post->author->name}}</a></h5>
                         <span>hace 20 minutos</span>
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-reply"></i>

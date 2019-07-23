@@ -12,7 +12,7 @@
             <div class="card targeta_perfil">
               <div class="card-body cuadroperfil1">
                     <h5 class="card-title">Miembro desde</h5>
-                    <p class="card-text dato_usuario">{{Auth::user()->created_at->format('d M Y')}}</p>
+                    <p class="card-text dato_usuario">{{$user->created_at->format('d M Y')}}</p>
                     <h5 class="card-title">País</h5>
                     <p class="card-text dato_usuario">pais</p>
                     <h5 class="card-title">Puntos totales actuales</h5>
@@ -43,12 +43,14 @@
             <!--foto de perfil-->
             <div class="card targeta_perfil">
               <div class="foto_usuario">
-                <img src="{{ Storage::url(Auth::user()->avatar)}}" class="card-img-top" alt="imganenperfil">
+                <img src="{{ Storage::url($user->avatar)}}" class="card-img-top" alt="imganenperfil">
               </div>
               <div class="card-body cuadroperfil1">
                 <div class="editar_perfil">
-                  <h5 class="card-title">{{Auth::user()->name}}</h5>
-                  <a class="d-block" href="{{url('/editPerfil', Auth::user()->id)}}">Editar Perfil</a>
+                  <h5 class="card-title">{{$user->name}}</h5>
+                  @if(auth()->id()==$user->id)
+                  <a class="d-block" href="{{url('/editPerfil', $user->id)}}">Editar Perfil</a>
+                  @endif
                 </div>
                   <p class="card-text tiempoperfil">Activo hace 20 minutos</p>
               </div>
@@ -58,7 +60,8 @@
             <!--Escribe un estado-->
             <div class="card targeta_perfil">
               <div class="card-body estadoperfil">
-                <form  action="" method="POST">
+                <form  action="{{url('/perfil1')}}" method="POST">
+                  @csrf
                   <div class="form-group">
                     <textarea class="form-control estado_textarea" id="FormControlTextarea" rows="1" placeholder="Actualiza tu estado..."></textarea>
                   </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 
+
 class PerfilController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        //
+        return view('perfil');
     }
 
     /**
@@ -45,9 +46,9 @@ class PerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    public function show(User $user)
     {
-        //
     }
 
     /**

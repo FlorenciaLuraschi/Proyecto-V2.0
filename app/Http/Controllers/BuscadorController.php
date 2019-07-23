@@ -8,15 +8,21 @@ use App\User;
 class BuscadorController extends Controller
 {
     public function buscar(Request $request){
-
-      $nombres= User::query()->select('name');
+      // $id = User::query()->select('id');
+      $nombres= User::query()->select('id','name');
       if($request->has('search')){
         $nombres->where('name','like',$request->get('search').'%');
       }
 
-        return view('buscador',['nombres' => $nombres->get()]);
+        return view('buscador',[
+          'nombres' => $nombres->get(),
+          // 'id' => $id->get(),
+        ]);
 
     }
-    
+    // public function show(User $user){
+    //   return view('buscador', ['user'=> $user]);
+    // }
+
 
 }

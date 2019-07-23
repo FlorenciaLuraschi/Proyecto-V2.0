@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <img src="img/ayuda2.jpg" class="card-img" alt="...">
+              <img src="{{asset('img/ayuda2.jpg')}}" class="card-img" alt="...">
             </div>
           </div>
         </div>
@@ -76,12 +76,12 @@
             </div>
           </div>
           <div class="card mb-3 p-2">
-            <img src="img/imagen_ayuda.jpg" class="card-img-top" alt="...">
+            <img src="{{asset('img/imagen_ayuda.jpg')}}" class="card-img-top" alt="...">
           </div>
           <div class="card mb-3 p-2">
             <div class="card-body">
               <h2 id="pregunta5" class="card-title">¿Sala de chat general? ¿Por qué?</h2>
-              <p class="card-text">Nuestra plataforma está pensada para menores de edad, por lo que tenemos especial cuidado con quienes se relacionen aqui dentro, esperando brindad seguridad y buen ambiente.</p>
+              <p class="card-text">Nuestra plataforma está pensada para menores de edad, por lo que tenemos especial cuidado con quienes se relacionen aqui dentro, esperando brindar seguridad y buen ambiente.</p>
               <p class="card-text">Por lo que también, te darás cuenta que no se puede escribir cualquier comentario. Fomentemos el respeto y sano juego entre todos.</p>
             </div>
           </div>
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div class="card mb-3 p-2">
-            <img src="img/ayuda6.jpg" class="card-img-top" alt="...">
+            <img src="{{asset('img/ayuda6.jpg')}}" class="card-img-top" alt="...">
           </div>
         </div>
       </section>

@@ -43,11 +43,16 @@ class User extends Authenticatable
 
     public function countries(){
       return $this->belongsTo(Country::class);
-    }
+  }
     public function post(){
     return $this->hasMany(Post::class);
   }
-   public function publications(){
-   return $this->hasMany(Publication::class);
- }
+    public function publications(){
+      return $this->hasMany(Publication::class);
+  }
+  //   public function profile(){
+  //     return $this->hasOne(Profile::class);
+  // }
+
+
 }

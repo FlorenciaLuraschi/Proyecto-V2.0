@@ -10,7 +10,9 @@
                 <div class="card-body">
                   <ul>
                     @forelse($nombres as $nombre)
-                    <li>{{$nombre->name}}</li>
+                    <!-- el id debe ser el de cada uno de los usuarios y no el usuario registrado -->
+                    <li> <a href="{{url('/perfil', $nombre->id)}}">{{$nombre->name}}</a>
+                    </li>
                   @empty
                     <em>¡Usuario no encontrado!</em>
                   @endforelse

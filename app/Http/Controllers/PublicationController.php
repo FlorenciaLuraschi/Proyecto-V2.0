@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Publication;
+use App\User;
 
 class PublicationController extends Controller
 {
@@ -16,7 +17,10 @@ class PublicationController extends Controller
     {
       $publications = Publication::with('authorPublication')->latest()->get();
 
-      return view("publications.create")->with('publications',$publications);
+      return view("publications.create")->with([
+        'publications' => $publications,
+        'user' => auth()->user(),    //devuelve el usuario logueado
+      ]);
     }
 
     /**
@@ -50,9 +54,14 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $publications = Publication::with('authorPublication')->latest()->get();
+
+        return view("publications.create")->with([
+          'publications' => $publications,
+          'user' => $user,  //acá devuelve el usuario de la url(según el id)
+        ]);
     }
 
     /**

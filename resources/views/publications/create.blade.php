@@ -10,18 +10,25 @@
 </form>
 <br>
 <div class="container_comentarios">
+
   <ul class="lista_comentarios">
     @foreach ($publications as $publication)
-      <li>
+      @if($user->id == $publication->user_id)
+       <li>
             <div class="comentario_principal">
                 <!-- Contenedor del Comentario -->
                 <div class="caja_comentario">
                     <div class="encabezado_comentario">
+
                         <h5 class="nombre_comentario"><a href="#">{{$publication->authorPublication->name}}</a></h5>
+
                         <span>hace 20 minutos</span>
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-reply"></i>
+
+
                         <form class="button-delete" action="{{url('/perfil',$publication->id)}}" method="post">
+
                           @csrf
                           {{method_field('DELETE')}}
                           <button><i class="fas fa-trash-alt"></i></button>
@@ -30,6 +37,7 @@
                           <button><i class="fas fa-edit"></i></button>
                         </form>
                     </div>
+
                     <div class="contenido_comentario">
                         {{$publication->body}}
                     </div>
@@ -45,8 +53,12 @@
                 </div>
                 <button class="bottoncomentario" type="submit">Enviar</button>
             </form>
+
             </li>
+            @endif
             @endforeach
         </ul>
+
     </div>
+
 @endsection
