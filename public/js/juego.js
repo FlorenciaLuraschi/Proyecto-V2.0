@@ -5,33 +5,38 @@ window.onload= function(){
   const questionElement = document.getElementById('question');
   const answerButtons = document.getElementById('answer-buttons');
   const salir = document.querySelector('.salir');
+  const titulo = document.querySelector('.gridH1');
+  const tituloPrincipal = document.querySelector('.h1');
 
-  let shuffleQuestions, currentQuestionIndex;
+  let timeDisplay = document.getElementById("tiempo")
+  let timeInterval = null
+
+  let shuffleQuestions, currentQuestion;
 
   startButton.addEventListener('click', startGame);   //cuando haga click llama a la function startGame
   nextButton.addEventListener('click', ()=>{
-    currentQuestionIndex ++;
-    answerButtons.style.pointerEvents = "auto";
+    currentQuestion ++;
+    answerButtons.style.pointerEvents = "auto";  //permite clickear en las opciones
     nextQuestion();
   })
 
   function startGame(){
-    let time = setInterval(restarTiempo, 1000)
+    timeInterval = setInterval(restarTiempo, 1000)
     console.log('started');
+    titulo.classList.remove('hide')
+    tituloPrincipal.classList.add('hide')
     answerButtons.classList.remove('hide');
     salir.classList.remove('hide');
     startButton.classList.add('hide');   //agrego el atributo hide en startButton, para que desaparezca al hacer clist en comenzar
     questionContainer.classList.remove('hide'); //Le quito el atributo
     shuffleQuestions = questions.sort(() => Math.random()); //mezcla las preguntas
-    currentQuestionIndex = 0;
+    currentQuestion = 0;
     nextQuestion();  //Ejecuta metodo nextQuestion, siguiente pregunta
-
   }
 
   function nextQuestion(){
     resetState();
-    showQuestion(shuffleQuestions[currentQuestionIndex]);
-
+    showQuestion(shuffleQuestions[currentQuestion]);
   }
 
   function showQuestion(question){  //la funcion que muestra las preguntas
@@ -48,34 +53,39 @@ window.onload= function(){
 
     })
   }
+
+
   function resetState(){
-    clearStatusClass(document.querySelector('.game'));
+    clearStatusClass(document.querySelector('.game'));   //limpiar la clase del body(en este caso es un container con la clase game)
     nextButton.classList.add('hide');
-    while(answerButtons.firstChild){  //Si exite hijos del answerButtion
+    while(answerButtons.firstChild){  //primer elemento del answerButtons
       answerButtons.removeChild(answerButtons.firstChild);      //removelo, sacalo
     }
   }
-  function selectAnswer(e){  //permite seleccionar las respuestas
+
+
+  function selectAnswer(e){  //funcion seleccionar las respuestas
     const selectedButton = e.target;  //cuando se clickea el elemento
     const correct = selectedButton.dataset.correct;
     if(correct) {
-      sumarPuntos();
+      sumarPuntos();     //si la opcion es correcta ejecuta la funcion sumarPuntos
     }
-    setStatusClass(document.querySelector('.game'), correct);
+    setStatusClass(document.querySelector('.game'), correct);  //al div agregale la clase correct que es el color verde
 
     Array.from(answerButtons.children).forEach(button => {
       setStatusClass(button, button.dataset.correct);
     })
-    if (shuffleQuestions.length >currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    } else{
-      startButton.innerText = 'Reiniciar';
-      startButton.classList.remove('hide');
-    }
+    if (shuffleQuestions.length >currentQuestion + 1) {  //si quedan mas preguntas
+        nextButton.classList.remove('hide');             //aparece el boton siguiente
+     }
+  //  else{
+    //   startButton.innerText = 'Reiniciar';              // el boton reiniciar (no se esta ejecutando por el alert de restar tiempo)
+    //   startButton.classList.remove('hide');             //boton para comenzar de nuevo
+    // }
   }
 
   function setStatusClass(element, correct){
-    clearStatusClass(element);
+    clearStatusClass(element);   //borrar las clases:correct o wrong de los elementos, que viene de antes, de otras respuestas
     answerButtons.style.pointerEvents = "none";
       if(correct){
         element.classList.add('correct');
@@ -102,36 +112,49 @@ window.onload= function(){
     // document.getElementById('puntaje').innerHTML = "<strong> Puntaje: </strong>" + puntos;
       puntos = puntos + 5;
     }
-  function restarPuntos(){
-      puntos = puntos - 5;
-    }
+  // function restarPuntos(){
+  //     puntos = puntos - 5;
+  //   }
 
+  let tiempoPorJugada = 5
 
-  let tiempo= 60;
   function  restarTiempo(){
-    tiempo--
-    document.getElementById("tiempo").innerHTML = `<strong> Tiempo: ${tiempo}</strong>` ;
-    if (tiempo == 0) {
-      alert('se acabó el tiempo');
-      alert(`su puntaje es: ${puntos}`)
-      // Swal.fire(
-      //   'Se acabó el tiempo!',
-      //   'Su puntaje es: '+ (puntos-5) + '!',
-      //   'success',
-      // );
-      let confirmacion = confirm('¿Queres volver a jugar?')
-      if (confirmacion== true) {
-        tiempo == 0;   //quiero que el tiempo vuelva en 0
-        puntos == 0;
-        window.location= "/juego"
-      } else{
-        window.location= "/juego"
-      }
+    // tiempo maximo para toda una jugada (varias preguntas)
+    tiempoPorJugada--
 
-      // const span = document.createElement('span')
-      // span.innerHTML= '<strong> Se acabo el tiempo </strong>'
-      clearInterval(time);
-  }
+    timeDisplay.innerHTML = `<strong> Tiempo: ${tiempoPorJugada}</strong>` ;
+
+    if (tiempoPorJugada == 0) {
+      clearInterval(timeInterval);
+      tiempoPorJugada = 5;   //quiero que el tiempo vuelva a restar
+      puntos = 0;
+
+      Swal.fire(
+        'Se acabó el tiempo!',
+        `Su puntaje es: ${puntos}!`,
+        'success',
+      ).then(result => {
+        if (result.value) {
+          Swal.fire({
+            title: '¿Querés volver a jugar?',
+            // text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, me encanto :)',
+            cancelButtonText: 'No, gracias :('
+          }).then((result) => {
+            if (result.value) {
+              window.location= "/juego"
+              //startGame()
+            } else {
+              window.location= "/juego"
+            }
+          })
+        }
+      });
+    }
  }
 
  //Matriz de preguntas con las opciones

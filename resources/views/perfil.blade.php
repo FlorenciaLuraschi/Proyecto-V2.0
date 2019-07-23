@@ -60,10 +60,12 @@
             <!--Escribe un estado-->
             <div class="card targeta_perfil">
               <div class="card-body estadoperfil">
-                <form  action="{{url('/perfil1')}}" method="POST">
-                  @csrf
+                <form  action="" method="POST">
+
                   <div class="form-group">
-                    <textarea class="form-control estado_textarea" id="FormControlTextarea" rows="1" placeholder="Actualiza tu estado..."></textarea>
+                    <textarea class="form-control estado_textarea" id="FormControlTextarea" rows="1" placeholder="Actualiza tu estado...">
+
+                    </textarea>
                   </div>
                   <button class="botton_estado" type="submit">Enviar</button>
                 </form>
@@ -95,5 +97,5 @@
   </div>
 
 
-
+<script src="{{ asset('js/estado.js') }}" charset="utf-8"></script>
 @endsection

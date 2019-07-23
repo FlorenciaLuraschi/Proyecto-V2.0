@@ -10,10 +10,13 @@
      <span id="puntaje"></span>
    </div>
    <div class="container grid">
-    <h1 class="gridH1">Preguntas</h1>
+    <h1 class="gridH1 hide">Preguntas</h1>
+    <h1 class="h1">FloPaTin's Game</h1>
     <hr style="margin-top:20px">
     <div class="questionContainer">
-      <p id="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+      <p id="question">Este es un juego de preguntas. Si respondes correctamente se te suman 5 puntos.
+        Tenés un minuto para hacerlos. Una vez finalizado el tiempo, te muestra el puntaje total que obtuviste.
+        Si deseas, podés vuelve a jugar!!!</p>
 
 
     <div class="row buttons hide" id="answer-buttons">
@@ -38,5 +41,5 @@
 
 
 
-
+<script src="{{ asset('js/juego.js') }}" charset="utf-8"></script>
 @endsection

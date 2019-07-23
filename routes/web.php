@@ -32,8 +32,7 @@ Route::get('/ayuda', function () {
 Route::get('/juego', function () {
     return view('juego');
 });
-Route::get('/perfil1', 'PerfilController@create');
-
+//Route::get('/perfil1', 'PerfilController@create');
 Route::get('/search', 'BuscadorController@buscar');
 Route::get('/editPerfil/{user}', 'PerfilController@edit');
 Route::patch('/editPerfil/{user}', 'PerfilController@update');

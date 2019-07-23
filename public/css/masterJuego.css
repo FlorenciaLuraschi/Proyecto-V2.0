@@ -133,3 +133,13 @@
   bottom: 30px;
   left:50px;
 }
+.h1{
+  font-family: "Sofia", cursive;
+  font-weight: bold;
+  color: #ffecb3;
+  font-size:50px;
+  /* color:#fff; */
+  border-radius:50px;
+  text-align: center;
+  background-color: #57636e;
+}

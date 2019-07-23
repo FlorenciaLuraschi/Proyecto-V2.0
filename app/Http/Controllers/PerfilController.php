@@ -26,7 +26,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        return view('perfil');
+    //    return view('perfil');
     }
 
     /**
