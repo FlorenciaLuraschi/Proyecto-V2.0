@@ -64,6 +64,11 @@ class PublicationController extends Controller
         ]);
     }
 
+    public function showPublication(Publication $publication)
+    {
+        return view('publications.create', ['publication'=>$publication]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

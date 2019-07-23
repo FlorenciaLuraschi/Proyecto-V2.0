@@ -10,6 +10,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -72,7 +73,7 @@
                             <a class="nav-link" href="/juego">Jugar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tabla">Tabla</a>
+                            <a class="nav-link" href="/posts">Tabla</a>
                         </li>
 
                         @endguest

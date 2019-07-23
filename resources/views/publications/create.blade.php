@@ -1,5 +1,7 @@
 @extends('perfil')
 @section('publicaciones')
+
+
 <form action="{{url('/perfil')}}" method="POST">
   @csrf
   <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -9,8 +11,9 @@
     <button class="bottoncomentario" type="submit">Enviar</button>
 </form>
 <br>
-<div class="container_comentarios">
 
+
+<div class="container_comentarios">
   <ul class="lista_comentarios">
     @foreach ($publications as $publication)
       @if($user->id == $publication->user_id)
@@ -26,16 +29,19 @@
                         <i class="fas fa-heart"></i>
                         <i class="fas fa-reply"></i>
 
-
+                        @if (Auth::user()->can('delete', $publication))
                         <form class="button-delete" action="{{url('/perfil',$publication->id)}}" method="post">
 
                           @csrf
                           {{method_field('DELETE')}}
                           <button><i class="fas fa-trash-alt"></i></button>
                         </form>
+                        @endif
+                        @if (Auth::user()->can('update', $publication))
                         <form class="button-edit" action="{{url('/perfil',$publication->id)}}" method="post">
                           <button><i class="fas fa-edit"></i></button>
                         </form>
+                        @endif
                     </div>
 
                     <div class="contenido_comentario">

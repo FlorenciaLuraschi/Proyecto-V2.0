@@ -45,9 +45,13 @@ Route::post('/perfil', 'PublicationController@store');
 Route::get('/perfil/{publication}/edit', 'PublicationController@edit');
 Route::patch('/perfil/{publication}', 'PublicationController@update');
 Route::delete('/perfil/{publication}', 'PublicationController@destroy');
+// Route::get('/perfil/{user}', 'PublicationController@showPublication');
 
 
 Route::get('/post/{id}/heartbyme', 'PostController@heartbyme');
 Route::post('/post/heart', 'PostController@heart');
 
 Route::get('/perfil/tabla', 'GamesController@index');
+
+
+Route::post('/score', 'ScoreController@store');

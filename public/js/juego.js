@@ -116,7 +116,7 @@ window.onload= function(){
   //     puntos = puntos - 5;
   //   }
 
-  let tiempoPorJugada = 5
+  let tiempoPorJugada = 60
 
   function  restarTiempo(){
     // tiempo maximo para toda una jugada (varias preguntas)
@@ -126,8 +126,14 @@ window.onload= function(){
 
     if (tiempoPorJugada == 0) {
       clearInterval(timeInterval);
-      tiempoPorJugada = 5;   //quiero que el tiempo vuelva a restar
-      puntos = 0;
+      tiempoPorJugada = 60;   //quiero que el tiempo vuelva a restar
+
+      axios.post('/score', {
+        score: puntos
+      }).then(response => {
+        console.log('axios', response)
+      })
+
 
       Swal.fire(
         'Se acabó el tiempo!',
