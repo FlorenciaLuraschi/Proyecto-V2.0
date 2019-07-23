@@ -17,8 +17,12 @@ class PostsController extends Controller
     public function index()
     {
       $posts=Post::with('author')->latest()->get();
-      
-      return view("post.listado")->with('posts',$posts);
+      $games=Game::query()->with('player')->orderByDesc('score')->take(20)->get();
+
+      return view("post.listado")->with([
+        'posts' => $posts,
+        'games' => $games,
+      ]);
     }
 
     /**
@@ -95,12 +99,5 @@ class PostsController extends Controller
     {
       $post->delete();
       return redirect('/posts');
-    }
-
-    public function posiciones()
-    {
-      $games=Game::query()->with('player')->orderByDesc('score')->take(20)->get();
-
-      return view("post.create")->with('games',$games);
     }
 }

@@ -50,4 +50,8 @@ class User extends Authenticatable
   public function games(){
     return $this->hasMany(Game::class);
   }
+  public function hearts(){
+    // return $this->belongsToMany(Post::class, 'hearts', 'user_id', 'post_id');
+    return $this->hasMany(Heart::class);
+  }
 }

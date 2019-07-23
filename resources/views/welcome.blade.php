@@ -16,7 +16,7 @@
         @if (Route::has('login'))
         <div class="top-right links">
             @auth
-            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ url('/posts') }}">Inicio</a>
             @else
             <a href="{{ route('login') }}">Iniciar Sesión</a>
 
@@ -30,10 +30,10 @@
         @endif
 
         <div class="content">
-            <div class="title m-b-md">
+            <div class="title m-b-md animated slideInDown">
                 <strong>FloPaTin</strong>
             </div>
-            <p><strong>Somos una comunidad donde podrás jugar,
+            <p class="animated slideInUp"><strong>Somos una comunidad donde podrás jugar,
                     un foro para socializar con otros jugadores,
                     un blog para compartir tus experiencias de juego y también para que otros, dentro de nuestra comunidad, puedan conocerte.</strong></p>
         </div>

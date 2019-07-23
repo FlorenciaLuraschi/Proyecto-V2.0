@@ -13,4 +13,8 @@ class Post extends Model
   {
     return $this->belongsTo(User::class, 'user_id');
   }
+  public function hearts(){
+    // return $this->belongsToMany(User::class, 'hearts');
+    return $this->hasMany(Heart::class);
+  }
 }

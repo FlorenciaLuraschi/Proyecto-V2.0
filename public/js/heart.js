@@ -1,14 +1,16 @@
 window.onload = function(){
 let heart = document.getElementById("myHeart");
-heart.onclick = count;
+heart.onclick = cuenta;
 let count_heart= 0;
-function count(){
- count_heart += 1;
- }
- $(document).ready(function(){
-   $(heart).click(function(){
-   count();
- });
+function cuenta(){
+count_heart += 1;
+}
+$(heart).ready(function(){
+  $(heart).click(function(){
+  cuenta();
+  alert(count_heart);
+  });
+
 });
 }
 //

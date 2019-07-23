@@ -1,24 +1,25 @@
 {{-- tabla de posiciones generales --}}
-@extends('post.create')
-@section('flopationes')
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">FloPaTiones</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr>
+    <table id="flopationes">
+        <thead>
+            <tr id="columna_flopationes">
+                <th  class="th_flopationes">FloPaTiones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($games as $game)
+            <tr class="tr_flopationes">
 
-      @foreach ($games as $game)
+                <td class="td_flopationes">
+                  <div class="avatar-position">
+                    <img src="{{ Storage::url($game->player->avatar) }}" alt="">
+                  </div>
+                  {{ $game->player->name }}
+                  <br>
+                    {{ $game->score }}
 
-      <td>
-        {{ $game->score }}
-        {{ $game->player->name }}
-      </td>
-      @endforeach
-    </tr>
+                </td>
 
-  </tbody>
-</table>
-@endsection
+            </tr>
+            @endforeach
+        </tbody>
+    </table>

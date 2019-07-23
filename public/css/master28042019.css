@@ -1,8 +1,9 @@
+@import "login_register.css";
 @import "navbar.css";
 @import "carrusel.css";
-@import "footer.css";
-@import "formularioslogin_registracion.css";
 @import "inicio.css";
-@import "juego.css"; 
+@import "juego.css";
 @import "perfil.css";
 @import "ayuda.css";
+@import "tabla.css";
+@import "footer.css";

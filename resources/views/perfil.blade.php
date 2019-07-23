@@ -72,9 +72,10 @@
                       <!--tabla de posiciones-->
                       <div class="card targeta_perfil">
                           <div class="card-body tablaperfil">
-                              <h5 class="card-title">Tabla de Posiciones</h5>
+                              {{-- <h5 class="card-title">Tabla de Posiciones</h5>
                               <p class="card-text">En este lugar se cargará la posición actual del usuario del perfil, que puede o no estar dentro de los primeros 20 que se muestra en el inicio. Pero el usuario en este lugar puede conocer exactamente
-                                  su posición en la tabla general.</p>
+                                  su posición en la tabla general.</p> --}}
+                                  {{-- @yield('tabla_posiciones_perfil') --}}
                           </div>
                       </div>
                   </article>

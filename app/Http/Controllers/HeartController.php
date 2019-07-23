@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Game;
-use App\User;
+use App\Heart;
 
-class GamesController extends Controller
+class HeartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-      $games=Game::query()->with('player')->orderByDesc('score')->get();
-
-      return view("games.posiciones_perfil")->with('games',$games);
+        //
     }
 
     /**
@@ -49,21 +46,7 @@ class GamesController extends Controller
      */
     public function show($id)
     {
-
-      $max_score=Game::query()->with('player')->max('score')->get();
-      $min_score=Game::query()->with('player')->min('score')->get();
-
-
-      if($id===$max_score->player->id){
-          $games=Game::query()->with('player')->orderByDesc('score')->take(5)->get();
-        }elseif($id===$min_score->player->id){
-          $games=Game::query()->with('player')->orderBy('score', 'desc')->take(5)->orderByDesc('score')->get();
-        }else{
-          $games=Game::query()->with('player')->orderByDesc('score')->find($id)->get();
-        }
-
-      return view("games.posiciones_perfil")->with('games',$games);
-      
+        //
     }
 
     /**

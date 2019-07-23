@@ -1,89 +1,79 @@
 /**
- * fondo body:  #c49989 #F1CCB0  #EFCDB0
+ * fondo body:  rgb(230, 221, 179) o #E6DDB3
  * Oscuro: #283035
  * Azul: #03658c
  * Detalle: #c7cacb
- * Fondo de comentarios: #dee1e3
+ * Fondo de comentarios: #F1F1F1
+ *iconos:rgba(243, 150, 154,1)
  ----------------------------------*/
+ /** ====================
+  * Css para parte 1/2 de la pagina principal contiene
+  * ~comentarios(post)
+  * ~conectados activos en la comunidad
+  =======================*/
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
  	-moz-box-sizing: border-box;
 }
-/*estilos para el body de la pagina de inicio*/
+
 body{
-  background-color: #EFCDB0;
+  background-color: rgb(230, 221, 179);
 
 }
-/* .body-inicio{
-  background-image: url(../img/fondo-body.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 .contenedorprincipal{
-/*  max-width: 1200px;*/
   margin: 0;
 }
-.tablaposiciones{
-  margin: 2%;
+.ocultar{
+  display: none;
 }
-.miembrosvisibles{
-  margin: 2% 0 2% 2%;
+.mostrar{
+  display: block;
 }
-.tablaposiciones,.miembrosvisibles{
-  background-color:#364D3F;
-  padding: 10px;
-}
-.ayudas{
-  color: white;
-}
+
+/*******************************************************************/
+/** ====================
+ * Cuerpo general de los Comentarios
+ =======================*/
 .chatgeneral{
-  /* background-color: #4f6b5a; */
-  /*padding: 10px;*/
-  /*font-family: 'Merienda', cursive;
-  font-weight: 400;
-  color: #ffecb3;*/
   margin-top: 2%;
   border-radius: 5px;
   font-size: 12px;
-  font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+  font-family: Nunito, sans-serif;
   max-width: 766px
 }
+.chatgeneral a {
+ color: #03658c;
+ text-decoration: none;
+}
+
+.chatgeneral ul {
+ list-style-type: none;
+}
+/** ====================
+ * textarea de envio de comentarios
+ =======================*/
 .estilotextarea{
   width: calc(100% - 110px);
   float:left;
   min-height: 35px;
+  font-size: 14px;
   outline: none;
-  font-size: 12px;
-  background-color: #c49989;
+  background-color: #F1F1F1;
   -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.5);
 	-moz-box-shadow: 0 10px 10px rgba(0,0,0,0.5);
 	box-shadow: 0 10px 10px rgba(0,0,0,0.5);
 }
 
-.bottoncomentario:focus {
-    border: 1px solid #8bc34a;
-    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, 0.25);
+.estilotextarea:focus{
+  background-color: #F1F1F1;
 }
-
 .bottoncomentario{
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #8bd6a1;
   margin-left: 30px;
   margin-top: 20px;
-  outline: none;
 }
-
-/*******************************************************************/
- .chatgeneral a {
- 	color: #03658c;
- 	text-decoration: none;
- }
-
-.chatgeneral ul {
-	list-style-type: none;
+.modal-footer{
+  border: none;
 }
 
 /** ====================
@@ -101,9 +91,9 @@ body{
   padding: 0;
 }
 
-/**
+/** ====================
  * Lineas / Detalles
- -----------------------*/
+ =======================*/
  .lista_comentarios:before {
 	content: '';
 	width: 2px;
@@ -131,12 +121,11 @@ body{
 	content: '';
 	width: 60px;
 	height: 2px;
-	background: #F1F1F1;
+	background: #c7cacb;
 	position: absolute;
 	top: 25px;
 	left: -58px;
 }
-
 
 .lista_comentarios li {
 	margin-bottom: 15px;
@@ -157,9 +146,10 @@ body{
 	clear: both;
 	margin-top: 15px;
 }
-/**
+
+/** ====================
  * Avatar
- ---------------------------*/
+ =======================*/
  .lista_comentarios .comentario_avatar {
 	width: 65px;
 	height: 65px;
@@ -189,9 +179,10 @@ body{
 	display: block;
 	clear: both;
 }
-/**
+
+/** ====================
  * Caja del Comentario
- ---------------------------*/
+ =======================*/
 .lista_comentarios .caja_comentario {
 	width: calc(100% - 85px);
 	float: right;
@@ -246,7 +237,7 @@ body{
 }
 
 .caja_comentario .encabezado_comentario i:hover {
-	color: #03658c;
+	color: rgba(243, 150, 154,1);
 }
 .button-hearts, .button-delete button, .button-edit{
   background-color: transparent;
@@ -283,4 +274,18 @@ body{
 	font-size: 15px;
 	color: #595959;
 	border-radius: 0 0 4px 4px;
+}
+/**************************************/
+/** ====================
+ * Tabla de miembros conectados
+ =======================*/
+.miembrosvisibles{
+  margin: 2% 0 2% 2%;
+}
+.miembrosvisibles{
+  background-color:#364D3F;
+  padding: 10px;
+}
+.ayudas{
+  color: white;
 }

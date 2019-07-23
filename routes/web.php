@@ -26,6 +26,7 @@ Route::get('/posts/new', 'PostsController@create');
 Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::get('/posts/{post}/edit', 'PostsController@edit');
 Route::patch('/posts/{post}', 'PostsController@update');
+
 Route::get('/ayuda', function () {
     return view('ayuda');
 });
@@ -37,4 +38,7 @@ Route::get('/perfil', function () {
 });
 Route::get('/search', 'BuscadorController@buscar');
 
-Route::get('/posts', 'PostsController@create');
+Route::get('/post/{id}/heartbyme', 'PostController@heartbyme');
+Route::post('/post/heart', 'PostController@heart');
+
+Route::get('/perfil/tabla', 'GamesController@index');

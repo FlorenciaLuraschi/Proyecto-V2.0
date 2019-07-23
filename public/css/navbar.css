@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
-/*Comienzo de estilo de la barra de navegación*/
+/** ====================
+ * Estilos extra a boostrap del navbar
+ =======================*/
 .navbarra{
   padding: 0;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0);
 }
 nav h2{
   color: #ffecb3;

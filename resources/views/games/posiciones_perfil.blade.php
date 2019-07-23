@@ -1,6 +1,6 @@
 {{-- tabla de posiciones generales --}}
-@extends('post.create')
-@section('flopationes')
+@extends('perfil')
+@section('tabla_posiciones_perfil')
 <table class="table table-hover">
   <thead>
     <tr>

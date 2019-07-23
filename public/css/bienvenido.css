@@ -55,10 +55,8 @@ html, body {
     text-align: center;
 }
 
-.title {
+.title strong {
     font-size: 84px;
-    /* font-family: 'Special Elite', cursive; */
-    /* font-family: 'Lobster', cursive; */
     font-family: "Sofia", cursive;
     font-weight: bold;
     color: #ffecb3;
