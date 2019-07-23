@@ -2,39 +2,18 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    {{-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('partials.head')
     <title>@yield("title")</title>
 
-    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    {{-- Icons --}}
-    {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> --}}
-
-    <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merienda:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> --}}
-
-    <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master28042019.css"> --}}
 </head>
 
-<body>
+<body id="top">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm">
             <div class="container">
@@ -66,7 +45,7 @@
                         @endif
                         @else
                         <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}">
-                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" value="">
+                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar personas ..." value="">
                             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                         <li class="nav-item dropdown">
@@ -93,7 +72,7 @@
                             <a class="nav-link" href="/juego">Jugar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts">Sala</a>
+                            <a class="nav-link" href="/tabla">Tabla</a>
                         </li>
 
                         @endguest

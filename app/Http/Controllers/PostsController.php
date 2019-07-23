@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Game;
 
 class PostsController extends Controller
 {
@@ -16,8 +17,12 @@ class PostsController extends Controller
     public function index()
     {
       $posts=Post::with('author')->latest()->get();
+      $games=Game::query()->with('player')->orderByDesc('score')->take(20)->get();
 
-      return view("post.listado")->with('posts',$posts);
+      return view("post.listado")->with([
+        'posts' => $posts,
+        'games' => $games,
+      ]);
     }
 
     /**

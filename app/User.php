@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','avatar','country_id',
+        'name', 'email', 'password','avatar','country_id', 'game_id'
     ];
 
     /**
@@ -47,12 +47,17 @@ class User extends Authenticatable
     public function post(){
     return $this->hasMany(Post::class);
   }
-    public function publications(){
-      return $this->hasMany(Publication::class);
+  public function publications(){
+    return $this->hasMany(Publication::class);
+}
+//   public function profile(){
+//     return $this->hasOne(Profile::class);
+// }
+  public function games(){
+    return $this->hasMany(Game::class);
   }
-  //   public function profile(){
-  //     return $this->hasOne(Profile::class);
-  // }
-
-
+  public function hearts(){
+    // return $this->belongsToMany(Post::class, 'hearts', 'user_id', 'post_id');
+    return $this->hasMany(Heart::class);
+  }
 }

@@ -11,8 +11,8 @@
       <h1>Preguntas Frecuentes</h1>
       <section class="section1_ayuda">
         <div class="card mb-3" style="max-width: 990px;">
-          <div class="row no-gutters">
-            <div class="col-md-8">
+          {{-- <div class="row no-gutters">
+            {{-- <div class="col-md-8">
               <div class="card-body">
                 <br>
                 <ol>
@@ -42,11 +42,12 @@
                   </li>
                 </ol>
               </div>
+            </div> --}}
+            {{--<div class="col-md-4">
+            aca falta el asset
+              <img src="img/ayuda2.jpg" class="card-img" alt="...">
             </div>
-            <div class="col-md-4">
-              <img src="{{asset('img/ayuda2.jpg')}}" class="card-img" alt="...">
-            </div>
-          </div>
+          </div> --}}
         </div>
       </section>
       <section>
@@ -109,15 +110,6 @@
         </div>
       </section>
 
-      <div class="consulta-ayuda">
-        <form class="consulta-ayuda" action="" method="post">
-          <label><h2>¿Te sirvio nuestra información?</h2></label><br>
-          <input type="submit" class="respuesta-boton" value="si">
-          <input type="submit" class="respuesta-boton" value="no"><br><br>
-          <label><h2>Consultas:</h2></label><br>
-          <textarea class="textarea_ayuda"name="" rows="2" cols="40" placeholder="Explique..."></textarea>
-        </form>
-      </div>
       </div>
   </div>
 @endsection

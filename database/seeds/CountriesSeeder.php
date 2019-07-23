@@ -16,6 +16,7 @@ class CountriesSeeder extends Seeder
       "BO" => "Bolivia",
       "BR" => "Brasil",
       "Cl" => "Chile",
+      "CO" => "Colombia",
       "CR" => "Costa Rica",
       "CU" => "Cuba",
       "DM" => "Dominica",
@@ -23,9 +24,12 @@ class CountriesSeeder extends Seeder
       "EC" => "Ecuador",
       "SV" => "El Salvador",
       "GT" => "Guatemala",
+      "HO" => "Honduras",
       "MX" => "México",
+      "Ni" => "Nicaragua",
       "PA" => "Panamá",
       "PY" => "Paraguay",
+      "PE" => "Perú",
       "PR" => "Puerto Rico",
       "UY" => "Uruguay",
       "VE" => "Venezuela",
@@ -35,6 +39,6 @@ class CountriesSeeder extends Seeder
       'iso' => $iso,
       'name' => $pais
   ]);
-  }  
+  }
     }
 }

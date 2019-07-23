@@ -3,25 +3,24 @@
 }
 /*Comienzo de estilo para ayuda*/
 .contenedor_ayuda{
-  max-width: 990px;
+  max-width: 100%;
   margin: 0 auto;
-  background-color:#364D3F;
   padding: 20px;
 }
 .contenedor_ayuda h1 {
   font-size: 40px;
-  font-family: 'Special Elite', cursive;
-  color: #ffecb3;
+  font-family: 'Lobster', cursive;
+  color: black;
   text-align: center;
 }
-.section1_ayuda li {
+/* .section1_ayuda li {
   font-family: 'Special Elite', cursive;
   color: white;
-}
-.section1_ayuda h3 {
+} */
+/* .section1_ayuda h3 {
   font-family: 'Special Elite', cursive;
   color: #d6c697;
-}
+} */
 .section1_ayuda a {
   text-decoration: none;
 }
@@ -30,12 +29,12 @@
   display: inline;
 }*/
 .listade_adyuda h2, .consulta-ayuda h2{
-  font-weight: 400;
-  font-family: 'Special Elite', cursive;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
   color: #ffecb3;
 }
 .listade_adyuda p{
-  font-family: 'Merienda', cursive;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: white;
 }
