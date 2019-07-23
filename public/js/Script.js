@@ -10,25 +10,23 @@ window.onload = function() {
    * LOGIN
    =======================*/
 
-   // let working = false;
-   // $('.login_register').on('submit', function(evento) {
-   //   evento.preventDefault();
-   //   if (working) return;
-   //   working = true;
-   //   let $this = $(this);
-   //     $state = $this.find('button > .state');
-   //   $this.addClass('loading');
-   //   $state.html('Autenticando');
-   //   setTimeout(function() {
-   //     $this.addClass('ok');
-   //     $state.html('¡Bienvenido!');
-   //     setTimeout(function() {
-   //       $state.html('Iniciar Sesión');
-   //       $this.removeClass('ok loading');
-   //       working = false;
-   //     }, 4000);
-   //   }, 3000);
-   // });
+   let working = false;
+
+   $('.login_register').on('submit', function(evento) {
+     evento.preventDefault();
+     //if (working) return;
+     //working = true;
+     let $this = $(this);
+       $state = $this.find('button > .state');
+     $this.addClass('loading');
+     $state.html('Autenticando');
+     setTimeout(function() {
+       $this.addClass('ok');
+       $state.html('¡Bienvenido!');
+       $this.unbind('submit').submit();
+     }, 4000);
+
+   });
 
 
   //Seleccionas todos los botones de editar

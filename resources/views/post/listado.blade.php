@@ -89,4 +89,5 @@
         </article>
     </div>
 </section>
+  <script type="text/javascript" src="{{ asset('js/Script.js') }}"></script>
 @endsection
