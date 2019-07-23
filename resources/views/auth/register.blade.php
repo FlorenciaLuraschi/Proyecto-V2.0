@@ -86,5 +86,5 @@
     </div>
 </div>
 </div>
-  <script type="text/javascript" src="{{ asset('js/Script.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Script.js') }}"></script>
 @endsection
