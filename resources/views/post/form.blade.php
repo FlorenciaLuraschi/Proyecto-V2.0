@@ -1,3 +1,4 @@
+<div class="form_post">
 <form action="/posts" method="POST">
   @csrf
   <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -7,3 +8,4 @@
     <button type = "submit" class = "btn btn-primary bottoncomentario">Enviar</button>
 
 </form>
+</div>

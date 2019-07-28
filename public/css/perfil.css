@@ -1,165 +1,421 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-/*comienzo de estilo del perfil*/
-.body-perfil{
-  background-image: url(../img/fondo-perfil.jpeg);
+
+/** ====================
+ * estilos del perfil
+ =======================*/
+.targeta_perfil {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-/* .card{
-  background-color:#364D3F;
+
+.cuerpo_perfil {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* .fecha_miembro, .pais_miembro{
+  margin: 0;
+  padding: 0;
 } */
-.maxwidth_perfil{
-  max-width: 1000px;
-  margin: 0 auto;
+.fondo_negro_centrado {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    align-items: center;
 }
-.targeta_perfil{
-  margin-top: 20px;
+
+.fondo_negro_simple {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
 }
-.cuadroperfil1{
-  text-align: center;
-  padding: 20px 10px;
-}
-.cuadroperfil1 h5, .tablaperfil h5, .publicaciones_perfil h5{
-    font-weight: 400;
-    font-size: 18px;
-    font-family: 'Special Elite', cursive;
-    color: #ffecb3;
-}
-.cuadroperfil1 .dato_usuario{
-    color: white;
-    font-family: 'Merienda', cursive;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 5px;
-}
-.editar_perfil{
-  display: flex;
-  justify-content: space-between;
-}
-.editar_perfil h5{
-  font-weight: 400;
-  font-size: 32px;
-  font-family: 'Special Elite', cursive;
-  color: #ffecb3;
-}
-.editar_perfil a{
-  text-decoration: none;
-  color: #ff9301;
-}
-.puntos_actuales{
-  color: #99ebb3;
-  font-family: 'Merienda', cursive;
-  font-weight: 700;
-  font-size: 32px;
-  -webkit-text-stroke: 0.5px black;
-  line-height: 10px;
-}
-.archivohistorico h5{
+
+/** ====================
+ * letras
+ =======================*/
+/* .editar h5{
+   font-weight: 400;
+   font-size: 32px;
+   font-family: 'Special Elite', cursive;
+   color: #ffecb3;
+ } */
+/* .archivo_edit{
+   font-family: 'Merienda', cursive;
+   font-weight: 400;
+   color: white;
+   display:flex;
+   margin-top: 15px
+ } */
+.archivohistorico h5 {
     font-weight: 400;
     font-family: 'Special Elite', cursive;
     color: #ffecb3;
     text-align: center;
 }
-.archivohistorico ul li a{
-  text-decoration: none;
-  color: white;
-  font-family: 'Merienda', cursive;
-  font-weight: 700;
-  font-size: 12px;
+
+/** ====================
+  * Detalles
+  =======================*/
+.pais_miembro {
+    box-shadow: 18px 1px 8px -15px #8c8b8b inset;
 }
-.foto_usuario img{
-  width: 100%;
-  height: 100%;
+
+.linea_horizontal {
+    height: 10px;
+    margin-top: 8px;
+    border: 2px;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
-.estadoperfil{
-  padding-left: 10px;
-  padding-bottom: 10px;
-  color: white;
-  font-family: 'Merienda', cursive;
-  font-weight: 700;
-  font-size: 12px;
+
+/* .fecha_miembro{
+    text-align: center;
+    /* border-right: solid 0.5px #8c8b8b; */
+/* box-shadow: -10px 1px 10px -10px #8c8b8b inset;
+  } */
+/** ====================
+ * Avatar principal del perfil
+ =======================*/
+.foto_usuario img {
+    width: 50%;
+    height: 50%;
 }
-.estado_textarea{
-  width: 200px;
-  float:left;
-  min-height: 35px;
-  outline: none;
-  font-size: 12px;
+
+/** ====================
+  * Datos Generales del usuario
+  =======================*/
+/** ====================
+   * Nombre y editar perfil
+   =======================*/
+.cuerpo_perfil h5, .tablaperfil h5, .publicaciones_perfil h5 {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffecb3;
 }
-.botton_estado{
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #8bd6a1;
-  margin-left: 10px;
+
+.cuerpo_perfil p {
+    color: white;
+    font-family: 'Acme', sans-serif;
+    font-size: 14px;
+    line-height: 5px;
 }
-.botton_estado:focus,.estado_textarea:focus {
+
+.editar_perfil {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editar_perfil h6 {
+    font-size: 32px;
+    font-family: 'Merienda One', cursive;
+    color: #ffecb3;
+}
+
+.editar_perfil a {
+    text-decoration: none;
+    color: #ff9301;
+    font-size: 14px;
+}
+
+.tiempoperfil {
+    color: white;
+    font-family: 'Merienda', cursive;
+    font-size: 8px;
+}
+
+/** ====================
+    * imagen bandera
+    =======================*/
+.bandera {
+    width: 50px;
+}
+
+/** ====================
+  * estado de Perfil
+  =======================*/
+.estadoperfil p {
+    /* padding-left: 10px;
+  padding-bottom: 10px; */
+    color: white;
+    /* font-family: 'Merienda', cursive;
+  font-weight: 700; */
+    font-size: 18px;
+}
+
+.estado_textarea {
+    width: 200px;
+    float: left;
+    min-height: 35px;
+    outline: none;
+    font-size: 12px;
+}
+
+.botton_estado {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8bd6a1;
+    margin-left: 10px;
+}
+
+.botton_estado:focus, .estado_textarea:focus {
     border: 1px solid #8bc34a;
     box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, 0.25);
 }
-.tablaperfil,.archivohistorico,.publicaciones_perfil{
-  padding: 10px;
+
+.tablaperfil, .archivohistorico {
+    padding: 10px;
 }
-.tiempoperfil{
-  color: white;
-  font-family: 'Merienda', cursive;
-  font-size: 10px;
-}
-.publicaciones_perfil{
-  background-color: #4f6b5a;
+
+.archivohistorico ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    font-size: 12px;
 }
 
 /*###########*/
-.maxwidth_configuracion{
-  max-width: 400px;
-  margin: 0 auto;
+.maxwidth_configuracion {
+    max-width: 400px;
+    margin: 0 auto;
 }
-.bottoneditar{
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #8bd6a1;
-  font-family: 'Merienda', cursive;
-  font-weight: 400;
-  margin-left: 30px;
-  margin-top: 20px;
-  outline: none;
+
+.bottoneditar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8bd6a1;
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    margin-left: 30px;
+    margin-top: 20px;
+    outline: none;
 }
+
 .bottoneditar:hover {
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
-.bottonavatar{
-  position:relative;
-  top:-15px;
-  left: 280px;
-  z-index: 40;
+.bottonavatar {
+    position: relative;
+    top: -15px;
+    left: 280px;
+    z-index: 40;
 }
-.bottonnombre{
-  position:relative;
-  left: 20px;
-  z-index: 40;
+
+.bottonnombre {
+    position: relative;
+    left: 20px;
+    z-index: 40;
+    margin: 0;
+}
+
+.editinput {
+    width: 250px;
+}
+
+.error_login span, .errorperfil span {
+    color: #ff9301;
+}
+
+/** ====================
+ * contenedor princial publicaciones
+ =======================*/
+.publicaciones_perfil {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.body-muro {
+    color: #797979;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    padding: 15px;
+    margin: 0px;
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    margin-top: 20px;
+}
+
+/** ====================
+ * contenedor del formulario publicaciones
+ =======================*/
+.profile-info .panel-final ul li a {
+    color: #7a7a7a;
+}
+
+/** ====================
+ * Formulario textarea
+ =======================*/
+.p-text-area, .p-text-area:focus {
+    border: none;
+    font-weight: 300;
+    box-shadow: none;
+    color: black;
+    font-size: 16px;
+}
+
+/** ====================
+ * contenedor linea publicación Principal
+ =======================*/
+.panel-body {
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/** ====================
+ * detalle avatar linea publicación Principal
+ =======================*/
+.p-foto-user {
+    float: left;
+    width: 70px;
+    margin-right: 15px;
+}
+
+.p-foto-user img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+/** ====================
+  * detalle user linea publicación Principal
+  =======================*/
+.p-user-detalles h3 {
+    margin: 15px 0 0;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.p-user-detalles p {
+    color: #c3c3c3;
+}
+
+/** ====================
+  * detalle contenido de la linea publicación Principal
+  =======================*/
+.p-user-publicacion {
+    padding: 10px 0;
+    line-height: 20px;
+}
+
+.publicacion-border {
+    border-top: 1px solid #ebeef5;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.p-button-delete i,.botones-publicacion i, .cmt-detalle i {
+    color: #A6A6A6;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.iprueba {
+    margin-left: 14px;
+}
+
+.panel-final i:hover, .p-button-delete i:hover, .botones-publicacion i:hover, .cmt-detalle i:hover {
+    color: rgba(243, 150, 154, 1);
+}
+
+.p-button-delete button, .p-button-edit{
+  float: left;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  width: auto;
+  padding: 0;
   margin: 0;
+  margin-left: 14px;
 }
-.editar h5{
-  font-weight: 400;
-  font-size: 32px;
-  font-family: 'Special Elite', cursive;
-  color: #ffecb3;
+.botones-publicacion {
+    padding: 15px 0;
 }
-.archivo_edit{
-  font-family: 'Merienda', cursive;
-  font-weight: 400;
-  color: white;
-  display:flex;
-  margin-top: 15px
+
+.botones-publicacion span, .botones-publicacion a {
+    margin-right: 5px;
 }
-.editinput{
-  width: 250px;
+
+.botones-publicacion a {
+    color: #2972a1;
 }
-.error_login span, .errorperfil span{
-  color: #ff9301;
+
+.botones-publicacion a:hover {
+    text-decoration: underline;
 }
-.bandera{
-  width: 50px;
+
+.botones-publicacion span {
+    color: #5a5a5a;
+}
+
+/** ====================
+ * Lista comentarios
+ =======================*/
+.p-gray-bg {
+    background: #f6f6f6;
+}
+
+.p-comentarios {
+    list-style-type: none;
+}
+
+.p-status-container, .p-comments li {
+    margin: 0 -10px 0 -10px;
+    padding: 0 15px;
+}
+
+.p-comentarios li {
+    border-top: 1px solid #ebeef5;
+    padding: 15px;
+}
+
+.p-comentarios .cmt-thumb {
+    width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.p-comentarios .cmt-thumb img {
+    width: 50px;
+}
+
+.p-comentarios .cmt-detalle {
+    padding-top: 5px;
+}
+
+.p-comentarios .cmt-detalle a {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.p-comentarios .cmt-detalle a.like-link {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.cmt-form {
+    display: inline-block;
+    width: 90%;
+}
+
+.cmt-form textarea {
+    height: 50px;
+    line-height: 35px;
 }

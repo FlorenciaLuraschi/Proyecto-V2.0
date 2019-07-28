@@ -14,7 +14,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" style="background-image: url('{{ asset('img/prueba_perfil1.jpg')}}')">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm">
             <div class="container">
@@ -73,7 +73,7 @@
                             <a class="nav-link" href="/juego">Jugar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts">Tabla</a>
+                            <a class="nav-link" href="/posts">Sala</a>
                         </li>
 
                         @endguest

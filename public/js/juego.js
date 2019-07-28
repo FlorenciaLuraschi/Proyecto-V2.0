@@ -116,7 +116,7 @@ window.onload= function(){
   //     puntos = puntos - 5;
   //   }
 
-  let tiempoPorJugada = 60
+  let tiempoPorJugada = 5
 
   function  restarTiempo(){
     // tiempo maximo para toda una jugada (varias preguntas)
@@ -126,7 +126,7 @@ window.onload= function(){
 
     if (tiempoPorJugada == 0) {
       clearInterval(timeInterval);
-      tiempoPorJugada = 60;   //quiero que el tiempo vuelva a restar
+      tiempoPorJugada = 5;   //quiero que el tiempo vuelva a restar
 
       axios.post('/score', {
         score: puntos
@@ -155,7 +155,7 @@ window.onload= function(){
               window.location= "/juego"
               //startGame()
             } else {
-              window.location= "/juego"
+              window.location= "/posts"
             }
           })
         }

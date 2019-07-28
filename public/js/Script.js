@@ -24,7 +24,7 @@ window.onload = function() {
        $this.addClass('ok');
        $state.html('¡Bienvenido!');
        $this.unbind('submit').submit();
-     }, 4000);
+     }, 3000);
 
    });
 
