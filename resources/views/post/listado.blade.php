@@ -18,7 +18,7 @@
                     @foreach ($posts as $post)
                     <li data-post="{{$post->id}}">
                         {{-- id={{'post_'.$post->id}} --}}
-                        <div id={{'post_'.$post->id}} class="comentario_principal">
+                      <div id={{'post_'.$post->id}} class="comentario_principal">
 
                             <!-- Avatar -->
                             <div class="comentario_avatar">
@@ -52,7 +52,7 @@
                                   <p> {{$post->description}} </p>
                                 </div>
                             </div>
-                        </div>
+                       </div>
                         <!-- formulario que deberia desaparecer con java-->
                         {{-- id={{'ta_'.$post->id}} --}}
                         <form id={{'ta_'.$post->id}} action="{{url('/posts',$post->id)}}" class="ocultar" method="POST">
@@ -71,7 +71,7 @@
                             </div>
                             {{-- <button class="bottoncomentario" type="submit">Enviar</button>
 
-                            <button class="btn btn-warning" type="button" style="vertical-align: inherit;">Cancelar</button> --}}
+                            <button class="btn btn-warning" type="button" style="vertical-align: inherit">Cancelar</button> --}}
                         </form>
 
                     </li>

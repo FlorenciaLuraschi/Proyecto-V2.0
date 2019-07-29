@@ -1,10 +1,11 @@
 <?php
-
+//Este es el controlador del Perfil y las publicaciones
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Publication;
 use App\User;
+use App\Game;
 
 class PublicationController extends Controller
 {
@@ -16,9 +17,10 @@ class PublicationController extends Controller
     public function index()
     {
       $publications = Publication::with('authorPublication')->latest()->get();
-
+      $games=Game::query()->with('player')->orderByDesc('score')->get();
       return view("publications.create")->with([
         'publications' => $publications,
+        'games'=>$games,
         'user' => auth()->user(),    //devuelve el usuario logueado
       ]);
     }
@@ -57,9 +59,10 @@ class PublicationController extends Controller
     public function show(User $user)
     {
         $publications = Publication::with('authorPublication')->latest()->get();
-
+        $games=Game::query()->with('player')->orderByDesc('score')->get();
         return view("publications.create")->with([
           'publications' => $publications,
+          'games'=>$games,
           'user' => $user,  //acá devuelve el usuario de la url(según el id)
         ]);
     }

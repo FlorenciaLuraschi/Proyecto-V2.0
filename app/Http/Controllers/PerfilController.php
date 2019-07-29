@@ -1,5 +1,5 @@
 <?php
-
+//Este es el controlador de editar perfil
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

@@ -26,7 +26,7 @@
                                   {{-- editar pefil --}}
                                 @if(auth()->id()==$user->id)
                                     <a class="d-block" href="{{url('/editPerfil', $user->id)}}">Editar Perfil</a>
-                                    @endif
+                                @endif
                             </div>
                             <p class="card-text tiempoperfil">Activo hace 20 minutos</p>
                             <hr class="linea_horizontal">
@@ -47,7 +47,11 @@
                         <div class="puntos_miembro col-12">
                           <hr class="linea_horizontal">
                           <h5 class="card-title">Puntos totales actuales</h5>
-                         <p class="card-text puntos_actuales">5000</p>
+                          @foreach($games as $game)
+                          @if($user->id == $game->user_id)
+                         <p class="card-text puntos_actuales">{{$game->score}}</p>
+                         @endif
+                         @endforeach
                         </div>
 
                       </div>

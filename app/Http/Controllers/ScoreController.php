@@ -14,8 +14,8 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        auth()->user()->games()->updateOrCreate([
-          'score' => $request->get('score')
+        auth()->user()->games()->updateOrCreate([], [
+          'score' => $request->get('score'),
         ]);
 
         return response([], 201);
