@@ -78,7 +78,7 @@ class PerfilController extends Controller
     $user->update([
     'name'=>$request->get('name'),
     'email'=>$request->get('email'),
-    'password'=>Hash::make($request->get('password')),
+    // 'password'=>Hash::make($request->get('password')),
   ]);
    return redirect("/perfil");
     }

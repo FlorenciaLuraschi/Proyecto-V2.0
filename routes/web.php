@@ -55,3 +55,5 @@ Route::get('/perfil/tabla', 'GamesController@index');
 
 
 Route::post('/score', 'ScoreController@store');
+Route::get('/changePassword', 'PasswordChangeController@edit');
+Route::patch('/changePassword/{password}', 'PasswordChangeController@update');

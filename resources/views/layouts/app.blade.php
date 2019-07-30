@@ -59,6 +59,8 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{url('/editPerfil', Auth::user()->id)}}">Editar Perfil</a>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{url('/changePassword')}}">Cambiar contraseña</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Cerrar Sesión') }}
