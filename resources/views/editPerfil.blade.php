@@ -11,6 +11,8 @@
 
             <!--foto de perfil-->
             <div class="card targeta_perfil">
+              <div class="card-body cuerpo_perfil">
+                <div class="fondo_editar_perfil">
               <div class="foto_usuario">
                 <img class="card-img-top" src="{{ Storage::url($user->avatar)}}" alt="">
               </div>
@@ -82,6 +84,7 @@
 
         </div>
       </section>
+    </div>
     </div>
   </div>
 

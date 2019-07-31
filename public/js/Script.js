@@ -29,7 +29,7 @@ window.onload = function() {
    });
 
 
-  //Seleccionas todos los botones de editar
+  //Seleccionas todos los botones de editar para post de la sala
   let botonesDeEditar = document.querySelectorAll('.fas.fa-edit');
   console.log(botonesDeEditar);
   for(let i = 0; i < botonesDeEditar.length; i++) {
@@ -51,48 +51,20 @@ window.onload = function() {
     });
   };
 
-  //Seleccionas todos los botones de editar
-  // $(function(){
-  //   let botonesDeEditar = document.querySelector('.fas.fa-edit');
-  //   for(let i = 0; i < botonesDeEditar.length; i++) {
-  //     botonesDeEditar[i].on('click', function() {
-  //       let postId = this.getAttribute('data-edit');
-  //       let thePost = document.querySelector('#post_' . postId);
-  //       let theTextArea = document.querySelector('#ta_' . postId);
-  //       $('#ta_' . postId).css("display","block");
-  //       $('theTextArea').addClass('mostrar');
-  //     });
-  //     let botonesDeEditar_ocultar = document.querySelector('.ocultar_editar');
-  //     botonesDeEditar_ocultar.on('click', function(){
-  //
-  //     });
-  //   };
-  // });
+  //Seleccionas todos los botones de editar para publicaciones de perfil
+  let botonesDeEditarPublication = document.querySelectorAll('.fa-edit.ipublication');
+  console.log(botonesDeEditarPublication);
+  for(let i = 0; i < botonesDeEditarPublication.length; i++) {
+    botonesDeEditarPublication[i].addEventListener('click', function() {
+      let publicactionId = this.parentElement.getAttribute('data-editpublication');
+      console.log(publicactionId);
+      let thePublication = document.querySelector('#publication_' + publicactionId);
+      console.log(thePublication);
+      let theTextAreap = document.querySelector('#tap_' + publicactionId);
+      thePublication.classList.toggle('mostrar');
+      theTextAreap.classList.toggle('mostrar');
+    });
+  };
 
 
-  /* Smooth Scrolling
- * ------------------------------------------------------ */
- // var clSmoothScroll = function() {
- //
- //     $('.smoothscroll').on('click', function (e) {
- //         var target = this.hash,
- //         $target    = $(target);
- //
- //             e.preventDefault();
- //             e.stopPropagation();
- //
- //         $('html, body').stop().animate({
- //             'scrollTop': $target.offset().top
- //         }, cfg.scrollDuration, 'swing').promise().done(function () {
- //
- //             // check if menu is open
- //             // if ($('body').hasClass('menu-is-open')) {
- //             //     $('.header-menu-toggle').trigger('click');
- //             // }
- //
- //             window.location.hash = target;
- //         });
- //     });
- //
- // };
 }

@@ -34,6 +34,8 @@
             <div class="panel-body">
 
                 <li data-publication="{{$publication->id}}">
+                  <div id={{'publication_'.$publication->id}}>
+
                     {{-- avatar --}}
                     <div class="p-foto-user">
                         <img src="{{ Storage::url($publication->authorPublication->avatar) }}" alt="">
@@ -51,7 +53,7 @@
                             {{-- <i class="fas fa-reply"></i> --}}
 
                             @if (Auth::user()->can('delete', $publication))
-                            <form class="p-button-delete" action="{{url('/posts',$publication->id)}}" method="post">
+                            <form class="p-button-delete" action="{{url('/perfil',$publication->id)}}" method="post">
                                 @csrf
                                 {{method_field('DELETE')}}
                                 <button><i class="fas fa-trash-alt"></i></button>
@@ -59,11 +61,27 @@
                           @endif
                           @if (Auth::user()->can('update', $publication))
                             <!-- boton de editar-->
-                            <button type="button" data-edit="{{$publication->id}}" class="p-button-edit"><i class="fas fa-edit"></i></button>
+                            <button type="button" data-editpublication="{{$publication->id}}" class="p-button-edit"><i class="fas fa-edit ipublication"></i></button>
                           @endif
                           <i class="fas fa-heart heart-principal iprueba"></i>
                         </div>
                     </div>
+                    </div>
+
+                    <form id={{'tap_'.$publication->id}} action="{{url('/perfil',$publication->id)}}" class="ocultar" method="post">
+                        @csrf
+                        {{method_field('PATCH')}}
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        <div class="form-group">
+                            <textarea class="form-control input-lg p-text-area" name="body" id="body" rows="2" cols="100">{{old('body', $publication ->body)}}</textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary ocultar_editar">Guardar cambios</button>
+
+                            <a href="/perfil"><button type="button" class="btn btn-secondary ocultar_editar" data-dismiss="modal">Cancelar</button></a>
+
+                        </div>
+                    </form>
 
                     <div class="p-status-container publicacion-border p-gray-bg">
                         <div class="fb-time-action like-info">
@@ -165,60 +183,5 @@
     </div>
 </div>
 
-
-
-{{-- <div class="container_comentarios">
-  <ul class="lista_comentarios">
-    @foreach ($publications as $publication)
-      @if($user->id == $publication->user_id)
-       <li>
-            <div class="comentario_principal">
-                <!-- Contenedor del Comentario -->
-                <div class="caja_comentario">
-                    <div class="encabezado_comentario">
-
-                        <h5 class="nombre_comentario"><a href="#">{{$publication->authorPublication->name}}</a></h5>
-
-<span>hace 20 minutos</span>
-<i class="fas fa-heart"></i>
-<i class="fas fa-reply"></i>
-
-@if (Auth::user()->can('delete', $publication))
-<form class="button-delete" action="{{url('/perfil',$publication->id)}}" method="post">
-
-    @csrf
-    {{method_field('DELETE')}}
-    <button><i class="fas fa-trash-alt"></i></button>
-</form>
-@endif
-@if (Auth::user()->can('update', $publication))
-<form class="button-edit" action="{{url('/perfil',$publication->id)}}" method="post">
-    <button><i class="fas fa-edit"></i></button>
-</form>
-@endif
-</div>
-
-<div class="contenido_comentario">
-    {{$publication->body}}
-</div>
-</div>
-</div>
-
-<form action="{{url('/perfil',$publication->id)}}" method="post">
-    @csrf
-    {{method_field('PATCH')}}
-    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-    <div class="form-group">
-        <textarea class="form-control estilotextarea" name="body" id="body" rows="3" cols="60">{{old('body', $publication ->body)}}</textarea>
-    </div>
-    <button class="bottoncomentario" type="submit">Enviar</button>
-</form>
-
-</li>
-@endif
-@endforeach
-</ul>
-
-</div> --}}
-
+<script type="text/javascript" src="{{ asset('js/Script.js') }}"></script>
 @endsection

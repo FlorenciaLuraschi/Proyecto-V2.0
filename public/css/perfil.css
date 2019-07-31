@@ -95,14 +95,21 @@
     font-family: 'Roboto', sans-serif;
     color: #ffecb3;
 }
-
+.publicaciones_perfil h5{
+  margin-top: 10px;
+  margin-left: 10px;
+}
 .cuerpo_perfil p {
     color: white;
     font-family: 'Acme', sans-serif;
     font-size: 14px;
     line-height: 5px;
 }
-
+.cuerpo_perfil .puntos_miembro p {
+    font-family: 'Sofia', cursive;
+    font-size: 30px;
+    line-height: 5px;
+}
 .editar_perfil {
     display: flex;
     text-align: center;
@@ -180,49 +187,7 @@
     font-size: 12px;
 }
 
-/*###########*/
-.maxwidth_configuracion {
-    max-width: 400px;
-    margin: 0 auto;
-}
 
-.bottoneditar {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #8bd6a1;
-    font-family: 'Merienda', cursive;
-    font-weight: 400;
-    margin-left: 30px;
-    margin-top: 20px;
-    outline: none;
-}
-
-.bottoneditar:hover {
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
-}
-
-.bottonavatar {
-    position: relative;
-    top: -15px;
-    left: 280px;
-    z-index: 40;
-}
-
-.bottonnombre {
-    position: relative;
-    left: 20px;
-    z-index: 40;
-    margin: 0;
-}
-
-.editinput {
-    width: 250px;
-}
-
-.error_login span, .errorperfil span {
-    color: #ff9301;
-}
 
 /** ====================
  * contenedor princial publicaciones
@@ -252,8 +217,11 @@
  =======================*/
 .profile-info .panel-final ul li a {
     color: #7a7a7a;
-}
 
+}
+.publicaciones_perfil ul li{
+  list-style:none;
+}
 /** ====================
  * Formulario textarea
  =======================*/
@@ -324,10 +292,6 @@ a:hover {
     color: #A6A6A6;
     cursor: pointer;
     transition: color 0.3s ease;
-}
-
-.iprueba {
-    margin-left: 14px;
 }
 
 .panel-final i:hover, .p-button-delete i:hover, .botones-publicacion i:hover, .cmt-detalle i:hover {
@@ -418,4 +382,57 @@ a:hover {
 .cmt-form textarea {
     height: 50px;
     line-height: 35px;
+}
+
+/*###########*/
+/*Editar Perfil
+*********************/
+.maxwidth_configuracion {
+    max-width: 450px;
+    margin: 0 auto;
+}
+.fondo_editar_perfil{
+  border-radius: 5px;
+  padding: 10px;
+  background: #F1F1F1;
+}
+.fondo_editar_perfil .foto_usuario{
+  margin-bottom: 5px;
+}
+.bottoneditar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8bd6a1;
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    margin-left: 30px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.bottoneditar:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.bottonavatar {
+    position: relative;
+    top: -15px;
+    left: 280px;
+    z-index: 40;
+}
+
+.bottonnombre {
+    position: relative;
+    left: 20px;
+    z-index: 40;
+    margin: 0;
+}
+
+.editinput {
+    width: 250px;
+}
+
+.error_login span, .errorperfil span {
+    color: #ff9301;
 }
