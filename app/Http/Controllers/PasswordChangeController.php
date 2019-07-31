@@ -40,8 +40,8 @@ class PasswordChangeController extends Controller
           auth()->user()->update([           //Al usuario logueado
         'password' => \Hash::make($request->get('password')),     //guarda la nueva contraseña hasheada a la base de datos
       ]);
-       return redirect('/perfil');  //->with('status', 'La contraseña ha sido cambiado con éxito!');
-    } return redirect('/changePassword');  //->with('message', 'credenciales incorrectas');
+       return redirect('/perfil')->with('status', 'La contraseña ha sido cambiado con éxito!');
+    } return redirect('/changePassword')->with('message', 'Credenciales incorrectas!');
 
 
 

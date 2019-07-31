@@ -3,7 +3,11 @@
 @section('titulo', 'Proyecto FloPaTin-Perfil')
 
 @section('content')
-
+@if(session('status'))
+<div class="alert alert-success">
+ {{session('status')}}
+</div>
+@endif
 <div class="container-fluid">
     {{-- <div class="contenedor_perfil"> --}}
     <section>

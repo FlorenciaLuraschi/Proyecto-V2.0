@@ -9,6 +9,8 @@ $("#editar-ocultar").click(function(event){
   $("#post_id").css("display","none");
 });
 }
+
+
 // if ($("#button-edit").attr("button")){
 //    $("#post_id").css("display", "block");
 // }
