@@ -4,7 +4,7 @@
 <div class="container">
     <div class="justify-content-center">
         <div class="wrapper">
-            <form class="login_register" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+            <form class="login_register register" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
                 <h1 class="title">Registrarse</h1>
 

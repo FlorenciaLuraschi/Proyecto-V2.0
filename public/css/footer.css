@@ -67,3 +67,6 @@
 .go-top a:hover, .go-top a:focus {
     color: #A6A6A6;
 }
+.hide{
+  display: none;
+}

@@ -4,6 +4,13 @@
 
 @section('content')
 
+{{--MENSAJE DE ERROR CUANDO NO COINCIDE LA CONTRASEÑA ACTUAL--}}
+@if(session('message'))
+<div class="alert alert-danger">
+ {{session('message')}}
+</div>
+@endif
+
   <div class="container-fluid">
     <div class="contenedor_perfil">
       <section>
@@ -58,19 +65,49 @@
                       @enderror
                     </div>
                   </div>
-                  {{--<div class="form-group row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña:') }}</label>
 
-                    <div class="col-md-6">
-                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{$user->password}}" required autocomplete="new-password">
+                  {{--CAMBIO DE CONTRASEÑA--}}
 
-                      @error('password')
-                      <span class="invalid-feedback" role="alert">
-                   <strong>{{ $message }}</strong>
-                      </span>
-                      @enderror
+                  <div class="current-password-contener">
+                    <div class="form-group row">
+                      <label for="current-password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña actual:') }}</label>
+
+                      <div class="col-md-6">
+                        <input id="current-password" type="password" class="form-control" name="current-password" value="" required autocomplete="off">
+                        <span class="text-danger">
+                     <strong>{{ $errors->first('current-password')}}</strong>
+                   </span>
+
+                      </div>
                     </div>
-                  </div> --}}
+                  </div>
+
+                  <div class="new-password-contener">
+                    <div class="form-group row">
+                      <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Nueva contraseña:') }}</label>
+
+                      <div class="col-md-6">
+                        <input id="password" type="password" class="form-control" name="password" value="" required autocomplete="password">
+                        <span class="text-danger">
+                     <strong>{{ $errors->first('password')}}</strong>
+                        </span>
+
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="verify-newPassword-contener">
+                    <div class="form-group row">
+                      <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar nueva contraseña:') }}</label>
+
+                      <div class="col-md-6">
+                        <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" value="" required autocomplete="new-password">
+                        <span class="text-danger">
+                     <strong>{{ $errors->first('password_confirmation')}}</strong>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
 
                   <div class="form-group row mb-0">

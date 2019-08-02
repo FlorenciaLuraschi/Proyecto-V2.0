@@ -11,12 +11,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
-
 </head>
 
 <body id="top" style="background-image: url('{{ asset('img/prueba_perfil1.jpg')}}')">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark navbarra shadow-sm" id="navbar">
             <div class="container">
                 <img class="logo" src="{{ asset('img/logo1.png') }}" alt="logo_proyecto">
                 <a class="navbar-brand" href="{{ url('/') }}">

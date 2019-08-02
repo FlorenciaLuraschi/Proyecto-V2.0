@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+<h1 class="passwordTitulo">Cambio de contraseña</h1>
+
  @if(session('message'))
 <div class="alert alert-danger">
   {{session('message')}}

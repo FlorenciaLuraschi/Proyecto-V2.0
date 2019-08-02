@@ -26,7 +26,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-    //    return view('perfil');
+
     }
 
     /**
@@ -73,14 +73,28 @@ class PerfilController extends Controller
     {
       if ($request->hasFile('avatar')) {
     $user->avatar=$request->file('avatar')->store('public/avatars');
-    }
+  };
     $user->update();
     $user->update([
     'name'=>$request->get('name'),
     'email'=>$request->get('email'),
     // 'password'=>Hash::make($request->get('password')),
   ]);
-   return redirect("/perfil");
+
+
+  //  PasswordChangeController
+  if(Hash::check($request['current-password'], auth()->user()->password)){
+    $this->validate($request, [
+    'password' => ['required', 'string', 'min:8', 'confirmed'],
+  ]);
+      auth()->user()->update([           //Al usuario logueado
+    'password' => \Hash::make($request->get('password')),     //guarda la nueva contraseña hasheada a la base de datos
+  ]);
+   return redirect('/perfil')->with('status', 'Los datos del perfil han sido cambiados con éxito!');
+ } return back()->with('message', 'Credenciales incorrectas!');
+
+
+    return redirect("/perfil");
     }
 
     /**

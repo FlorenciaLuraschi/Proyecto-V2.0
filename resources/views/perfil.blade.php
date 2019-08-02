@@ -43,7 +43,7 @@
                         </div>
                         <div class="pais_miembro col-6">
                           {{-- bandera pais usuario --}}
-                        <?php $bandera=Auth::user()->country_id;?>
+                        <?php $bandera=$user->country_id;?>
                           <img src="{{ asset('img/'.$bandera.'.png') }}" class="bandera" alt="bandera">
 
                         </div>
